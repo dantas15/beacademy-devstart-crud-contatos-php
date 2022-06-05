@@ -21,7 +21,10 @@
                         <td> ' . $partial[0] . '</td>
                         <td> ' . $partial[1] . '</td>
                         <td> ' . $partial[2] . '</td>
-                        <td>   <a href="/excluir?id=' . $posicao . '" class="btn btn-danger btn-sm">Excluir</a> </td>
+                        <td>
+                            <a href="/excluir?id=' . $posicao . '" class="btn btn-danger btn-sm">Excluir</a>
+                            <a href="/editar?id=' . $posicao . '" class="btn btn-warning btn-sm">Editar</a>
+                        </td>
                     </tr>
                 ';
 

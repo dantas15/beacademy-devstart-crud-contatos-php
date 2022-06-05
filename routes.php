@@ -63,6 +63,40 @@ function excluir()
     include __DIR__ . '/includes/message.php';
 }
 
+function editar()
+{
+    $id = $_GET['id'];
+
+    $contatos = file('dados/contatos.csv');
+
+    if ($_POST) {
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $telefone = $_POST['telefone'];
+
+        $contatos[$id] = "{$nome};{$email};{$telefone}" . PHP_EOL;
+
+        unlink('dados/contatos.csv');
+
+        $arquivo = fopen('dados/contatos.csv', 'a+');
+
+        foreach ($contatos as $contato) {
+            fwrite($arquivo, $contato);
+        }
+
+        fclose($arquivo);
+
+        $message = 'Contato editado com sucesso!';
+        include __DIR__ . '/includes/message.php';
+    }
+
+    $dados = $contatos[$id];
+
+    $contato = explode(';', $dados);
+
+    include __DIR__ . '/pages/editar.php';
+}
+
 function notfound()
 {
     include __DIR__ . '/pages/404.php';

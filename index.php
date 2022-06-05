@@ -10,6 +10,7 @@ match ($url[0]) {
     '/' => home(),
     '/cadastro' => cadastro(),
     '/excluir' => excluir(),
+    '/editar' => editar(),
     '/login' => login(),
     '/listar' => listar(),
     '/admin' => admin(),
