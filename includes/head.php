@@ -16,7 +16,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar-links">
             <div class="navbar-nav">
-                <a class="nav-link <?= $url == '/' ? 'active' : '' ?>" aria-current="page" href="#">Home</a>
+                <a class="nav-link <?= $url == '/' ? 'active' : '' ?>" aria-current="page" href="/">Home</a>
                 <a class="nav-link <?= $url == '/login' ? 'active' : '' ?>" href="/login">Login</a>
                 <a class="nav-link <?= $url == '/cadastro' ? 'active' : '' ?>" href="/cadastro">Cadastro</a>
                 <a class="nav-link <?= $url == '/listar' ? 'active' : '' ?>" href="/listar">Listar</a>
