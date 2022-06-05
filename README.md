@@ -38,7 +38,7 @@ Aqui temos os um projeto com um CRUD completo de contatos utilizando PHP e manip
    php -S localhost:8000
    ```
 
-3. Pronto ✅ A aula estará rodando em http://localhost:8000/
+3. Pronto ✅ O projeto estará rodando em http://localhost:8000/
 
 ## Ferramentas
 
