@@ -24,7 +24,8 @@ function cadastro()
 
         fclose($arquivo);
 
-        echo '<div class="alert alert-success" role="alert"> Cadastro do contato ' . $nome . ' realizado com sucesso!</div>';
+        $message = 'Cadastro do contato ' . $nome . ' realizado com sucesso!';
+        include __DIR__ . '/includes/message.php';
     }
 
     include __DIR__ . '/pages/cadastro.php';
@@ -40,6 +41,26 @@ function listar()
 function admin()
 {
     include __DIR__ . '/pages/admin.php';
+}
+
+function excluir()
+{
+    $id = $_GET['id'];
+
+    $contatos = file('dados/contatos.csv');
+
+    unset($contatos[$id]);
+
+    unlink('dados/contatos.csv');
+
+    $arquivo = fopen('dados/contatos.csv', 'a+');
+
+    foreach ($contatos as $contato) {
+        fwrite($arquivo, $contato);
+    }
+
+    $message = 'Contato excluído com sucesso!';
+    include __DIR__ . '/includes/message.php';
 }
 
 function notfound()

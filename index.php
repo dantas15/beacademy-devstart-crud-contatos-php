@@ -1,14 +1,15 @@
 <?php
 
-$url = $_SERVER['REQUEST_URI'];
+$url = explode('?', $_SERVER['REQUEST_URI']);
 
 include __DIR__ . '/includes/head.php';
 
 include 'routes.php';
 
-match ($url) {
+match ($url[0]) {
     '/' => home(),
     '/cadastro' => cadastro(),
+    '/excluir' => excluir(),
     '/login' => login(),
     '/listar' => listar(),
     '/admin' => admin(),
